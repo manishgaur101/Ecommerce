@@ -4,8 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import static reportutil.ExtenReport.extentPass;
-import static reportutil.ExtenReport.extentFail;
 
 public class Summary {
 	WebDriver driver;

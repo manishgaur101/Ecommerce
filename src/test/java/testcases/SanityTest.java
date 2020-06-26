@@ -1,43 +1,48 @@
 package testcases;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+
 import browserfactory.BrowserFactory;
-import pagefactory.Address;
 import pagefactory.Index;
 import pagefactory.Login;
-import pagefactory.Payment;
-import pagefactory.Shipping;
-import pagefactory.Summary;
+import reportutil.ExtenReport;
 
 public class SanityTest {
 	
 	WebDriver driver = BrowserFactory.getBrowser();
-	
+	ExtentTest test = null;
 
 	@Test(priority=1)
 	public void sanityTest(){
-		
-		Login login = new Login(driver);
+		test = ExtenReport.getExtentTest(new Object(){}.getClass().getEnclosingMethod().getName());
+		Login login = new Login(driver,test);
 		login.loginApp("mgaur000@gmail.com", "ABC123");
-		//driver.quit();
+		test.log(Status.PASS, "Login Successful");
 	}
 	
 	@Test(priority=2)
 	public void addItemIntoCart(){
-		Index index = new Index(driver);
+		test = ExtenReport.getExtentTest(new Object(){}.getClass().getEnclosingMethod().getName());
+		Index index = new Index(driver,test);
 		index.addItemIntoCart();
+		test.log(Status.PASS, "Item added to cart Successfully");
 	}
-	
+	/*
 	@Test(priority=3)
 	public void SummaryProceedToCheckout(){
+		test = ExtenReport.getExtentTest(new Object(){}.getClass().getEnclosingMethod().getName());
 		Summary summary = new Summary(driver);
 		summary.ClickOnProceedToCheckoutButton();
 	}
 	
 	@Test(priority=4)
 	public void commentandProceed(){
+		test = ExtenReport.getExtentTest(new Object(){}.getClass().getEnclosingMethod().getName());
 		Address address = new Address(driver);
 		address.enterCommentsAndProceedToCheckout();
 		
@@ -45,6 +50,7 @@ public class SanityTest {
 	
 	@Test(priority=5)
 	public void checkBoxAndProceed(){
+		test = ExtenReport.getExtentTest(new Object(){}.getClass().getEnclosingMethod().getName());
 		Shipping shipping = new Shipping(driver);
 		shipping.clickCheckBoxAndProceedToCheckout();
 		
@@ -52,10 +58,16 @@ public class SanityTest {
 	
 	@Test(priority=6)
 	public void ClickOnPayByBankWire(){
+		test = ExtenReport.getExtentTest(new Object(){}.getClass().getEnclosingMethod().getName());
 		Payment payment = new Payment(driver);
 		payment.Click_PayByBankWireandCompareAmount();
 		payment.printOrderDetails();
 		
 	}
-
+*/
+	@AfterTest
+	public void tearDown(){
+		ExtenReport.writeReport();
+		driver.close();
+	}
 }

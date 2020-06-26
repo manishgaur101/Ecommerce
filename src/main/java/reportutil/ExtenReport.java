@@ -1,8 +1,8 @@
 package reportutil;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.Properties;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -11,13 +11,18 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
 import commonutil.PropertyReader;
+import commonutil.SeleniumUtil;
 import constants.FilePath;
 
 public class ExtenReport {
-	static ExtentReports extent;
+	static ExtentReports extent = null;
+	static String pattern = "yyyy_MM_dd_hh_mm_ss";
+	static String dateTime = "";
+	SeleniumUtil selUtil = new SeleniumUtil();
 
-	public static ExtentTest ExtentRoot(String testCaseName){
-		String Report_path = FilePath.PROJECT_PATH+File.separator+"Report"+File.separator+"ExtentReportExp.html";
+	public static ExtentTest getExtentTest(String testCaseName){
+		if(extent == null){
+		String Report_path = FilePath.REPORT_PACKAGE+"//ExtentReportExp"+DateFormatter()+".html";
         ExtentHtmlReporter htmlReporter = new ExtentHtmlReporter(Report_path);
         
         PropertyReader prop = new PropertyReader();
@@ -31,23 +36,40 @@ public class ExtenReport {
         extent = new ExtentReports();
         extent.setSystemInfo("OS", "Windows");
         extent.attachReporter(htmlReporter);
+		}
         ExtentTest test = extent.createTest(testCaseName);
         return test;
         
 	}
 	
-	public static void extentPass(String testCaseName){
-		ExtentRoot(testCaseName).log(Status.PASS, testCaseName);
+	public static void writeReport(){
 		extent.flush();
 	}
 	
 	public static void extentFail(String testCaseName){
 		
-		ExtentRoot(testCaseName).log(Status.FAIL,testCaseName);
+		getExtentTest(testCaseName).log(Status.FAIL,testCaseName);
 		extent.flush();
 		
 	}
 	
+	public static String DateFormatter(){
+		SimpleDateFormat formatter = new SimpleDateFormat(pattern);
+		Date today = new Date();
+		dateTime = formatter.format(today);
+		return dateTime;
+	}
+	
+	public static void attachImage(ExtentTest test,String imageName){
+		try {
+			//String imageName = selUtil.takeScreenshotandAttachInReport(driver, test);
+			test.log(Status.INFO, "attached Image",
+					MediaEntityBuilder.createScreenCaptureFromPath(FilePath.SCREEN_SHOT+File.separator+imageName).build());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	
 	/*public static void Extent(String testCase)  {
 		// initialize the HtmlReporter

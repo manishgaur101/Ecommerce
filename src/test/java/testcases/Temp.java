@@ -16,8 +16,6 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
-import pagefactory.Login;
-
 public class Temp {
 	public static void signIn(WebDriver driver){
 		driver.findElement(By.xpath(".//a[@title='Log in to your customer account']")).click();
@@ -56,8 +54,8 @@ public class Temp {
 		
 		
 		driver.manage().window().maximize();
-		Login login = new Login(driver);
-		login.loginApp("mgaur000@gmail.com", "ABC123");
+		//Login login = new Login(driver);
+		//login.loginApp("mgaur000@gmail.com", "ABC123");
 		
 		
 		

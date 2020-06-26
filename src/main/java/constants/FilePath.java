@@ -9,4 +9,7 @@ public interface FilePath {
 	String TEST_RESOURCE_PACKAGE = PROJECT_PATH+File.separator+"src"+File.separator+"test"+File.separator+"resources";
 	/** Path of env.properties file */
 	String ENV_PROPERTIES = TEST_RESOURCE_PACKAGE+File.separator+"envsetup"+File.separator+"env.properties";
+	
+	String REPORT_PACKAGE = FilePath.PROJECT_PATH+File.separator+"Report";
+	String SCREEN_SHOT = FilePath.PROJECT_PATH+File.separator+"Images";
 }

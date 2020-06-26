@@ -1,37 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="6" passed="6">
+<testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="24933" started-at="2020-06-25T07:47:02Z" finished-at="2020-06-25T07:47:27Z">
+  <suite name="Suite" duration-ms="77324" started-at="2020-06-26T18:21:59Z" finished-at="2020-06-26T18:23:16Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="24933" started-at="2020-06-25T07:47:02Z" finished-at="2020-06-25T07:47:27Z">
+    <test name="Test" duration-ms="77324" started-at="2020-06-26T18:21:59Z" finished-at="2020-06-26T18:23:16Z">
       <class name="testcases.SanityTest">
-        <test-method status="PASS" signature="sanityTest()[pri:0, instance:testcases.SanityTest@352c1b98]" name="sanityTest" duration-ms="5239" started-at="2020-06-25T08:47:02Z" finished-at="2020-06-25T08:47:07Z">
+        <test-method status="PASS" signature="sanityTest()[pri:0, instance:testcases.SanityTest@258d79be]" name="sanityTest" duration-ms="7406" started-at="2020-06-26T19:21:59Z" finished-at="2020-06-26T19:22:06Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- sanityTest -->
-        <test-method status="PASS" signature="addItemIntoCart()[pri:0, instance:testcases.SanityTest@352c1b98]" name="addItemIntoCart" duration-ms="7686" started-at="2020-06-25T08:47:07Z" finished-at="2020-06-25T08:47:15Z">
+        <test-method status="PASS" signature="addItemIntoCart()[pri:0, instance:testcases.SanityTest@258d79be]" name="addItemIntoCart" duration-ms="68733" started-at="2020-06-26T19:22:06Z" finished-at="2020-06-26T19:23:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addItemIntoCart -->
-        <test-method status="PASS" signature="SummaryProceedToCheckout()[pri:0, instance:testcases.SanityTest@352c1b98]" name="SummaryProceedToCheckout" duration-ms="2653" started-at="2020-06-25T08:47:15Z" finished-at="2020-06-25T08:47:18Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:testcases.SanityTest@258d79be]" name="tearDown" is-config="true" duration-ms="1156" started-at="2020-06-26T19:23:15Z" finished-at="2020-06-26T19:23:16Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SummaryProceedToCheckout -->
-        <test-method status="PASS" signature="commentandProceed()[pri:0, instance:testcases.SanityTest@352c1b98]" name="commentandProceed" duration-ms="1891" started-at="2020-06-25T08:47:18Z" finished-at="2020-06-25T08:47:19Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- commentandProceed -->
-        <test-method status="PASS" signature="checkBoxAndProceed()[pri:0, instance:testcases.SanityTest@352c1b98]" name="checkBoxAndProceed" duration-ms="1759" started-at="2020-06-25T08:47:19Z" finished-at="2020-06-25T08:47:21Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkBoxAndProceed -->
-        <test-method status="PASS" signature="ClickOnPayByBankWire()[pri:0, instance:testcases.SanityTest@352c1b98]" name="ClickOnPayByBankWire" duration-ms="5674" started-at="2020-06-25T08:47:21Z" finished-at="2020-06-25T08:47:27Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ClickOnPayByBankWire -->
+        </test-method> <!-- tearDown -->
       </class> <!-- testcases.SanityTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>
