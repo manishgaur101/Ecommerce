@@ -5,9 +5,8 @@
     <classes>
       <class name="testcases.SanityTest">
         <methods>
-          <include name="commentandProceed"/>
-          <include name="checkBoxAndProceed"/>
-          <include name="ClickOnPayByBankWire"/>
+          <include name="tearDown"/>
+          <include name="addItemIntoCart"/>
         </methods>
       </class> <!-- testcases.SanityTest -->
     </classes>

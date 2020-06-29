@@ -1,5 +1,6 @@
 package pagefactory;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,13 +10,15 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
 import commonutil.SeleniumUtil;
+import testBase.TestBase;
+import testcases.SanityTest;
 
-public class Login {
+public class Login extends TestBase{
 
 	ExtentTest test = null;
 	SeleniumUtil selUtil = new SeleniumUtil();
 	WebDriver driver;
-	
+	Logger log = Logger.getLogger(Login.class);
 	@FindBy(xpath = "//a[@title='Log in to your customer account']")
 	WebElement sign_in_button;
 	
@@ -45,7 +48,7 @@ public class Login {
 		selUtil.click(driver,submit_button,selUtil, "Submit Button", test);
 		
 		}catch(Exception e){
-			
+			log.error(e);
 			test.log(Status.FAIL, "Login to application failed");
 			selUtil.takeScreenshotandAttachInReport(driver, test);
 		}

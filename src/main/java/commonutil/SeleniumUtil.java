@@ -12,6 +12,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 
 import constants.FilePath;
@@ -26,7 +27,7 @@ public class SeleniumUtil {
 		test.log(Status.PASS, "Clicked on "+elementName);
 		}catch(Exception e){
 			test.log(Status.FAIL, "Error in clicking on "+elementName);
-			selUtil.takeScreenshotandAttachInReport(driver, test);
+			takeScreenshotandAttachInReport(driver, test);
 			
 		}
 	}
@@ -66,24 +67,17 @@ public class SeleniumUtil {
 		return element.get(index).getText();
 	}
 	
-	public String takeScreenshotandAttachInReport(WebDriver driver,ExtentTest test){
-		String imageName = "";
+	public void takeScreenshotandAttachInReport(WebDriver driver,ExtentTest test){
 		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		try {
 			String path = FilePath.SCREEN_SHOT+File.separator+ExtenReport.DateFormatter()+"_image.png";
-			imageName = ExtenReport.DateFormatter()+"_image.png";
-			
 			FileUtils.copyFile(scrFile, new File(path), true);
-			ExtenReport.attachImage(test,imageName);
-			//test.log(Status.PASS,"Screenshot Captured");
+			test.log(Status.INFO, "attached Image",
+			MediaEntityBuilder.createScreenCaptureFromPath(path).build());
 		} catch (IOException e) {
 			test.log(Status.FAIL,"Failed Screenshot Caputed");
 		}
-		return imageName;
-		
-		
-		
-	}
+		}
 	
 	public void scrollTillElement(WebDriver driver,WebElement element){
 		

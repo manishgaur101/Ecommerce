@@ -1,5 +1,6 @@
 package testcases;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
@@ -11,11 +12,13 @@ import browserfactory.BrowserFactory;
 import pagefactory.Index;
 import pagefactory.Login;
 import reportutil.ExtenReport;
+import testBase.TestBase;
 
-public class SanityTest {
+public class SanityTest extends TestBase{
 	
 	WebDriver driver = BrowserFactory.getBrowser();
 	ExtentTest test = null;
+	Logger log = Logger.getLogger(SanityTest.class);
 
 	@Test(priority=1)
 	public void sanityTest(){
@@ -23,6 +26,7 @@ public class SanityTest {
 		Login login = new Login(driver,test);
 		login.loginApp("mgaur000@gmail.com", "ABC123");
 		test.log(Status.PASS, "Login Successful");
+		log.info("Login test case executed successfully");
 	}
 	
 	@Test(priority=2)
@@ -31,6 +35,7 @@ public class SanityTest {
 		Index index = new Index(driver,test);
 		index.addItemIntoCart();
 		test.log(Status.PASS, "Item added to cart Successfully");
+		log.info("Item added to cart Successfully");
 	}
 	/*
 	@Test(priority=3)

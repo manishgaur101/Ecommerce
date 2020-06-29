@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="77324" started-at="2020-06-26T18:21:59Z" finished-at="2020-06-26T18:23:16Z">
+  <suite name="Suite" duration-ms="79646" started-at="2020-06-27T13:18:14Z" finished-at="2020-06-27T13:19:33Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="77324" started-at="2020-06-26T18:21:59Z" finished-at="2020-06-26T18:23:16Z">
+    <test name="Test" duration-ms="79646" started-at="2020-06-27T13:18:14Z" finished-at="2020-06-27T13:19:33Z">
       <class name="testcases.SanityTest">
-        <test-method status="PASS" signature="sanityTest()[pri:0, instance:testcases.SanityTest@258d79be]" name="sanityTest" duration-ms="7406" started-at="2020-06-26T19:21:59Z" finished-at="2020-06-26T19:22:06Z">
+        <test-method status="PASS" signature="sanityTest()[pri:0, instance:testcases.SanityTest@4ff8d125]" name="sanityTest" duration-ms="8261" started-at="2020-06-27T14:18:14Z" finished-at="2020-06-27T14:18:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- sanityTest -->
-        <test-method status="PASS" signature="addItemIntoCart()[pri:0, instance:testcases.SanityTest@258d79be]" name="addItemIntoCart" duration-ms="68733" started-at="2020-06-26T19:22:06Z" finished-at="2020-06-26T19:23:15Z">
+        <test-method status="PASS" signature="addItemIntoCart()[pri:0, instance:testcases.SanityTest@4ff8d125]" name="addItemIntoCart" duration-ms="68729" started-at="2020-06-27T14:18:22Z" finished-at="2020-06-27T14:19:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addItemIntoCart -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:testcases.SanityTest@258d79be]" name="tearDown" is-config="true" duration-ms="1156" started-at="2020-06-26T19:23:15Z" finished-at="2020-06-26T19:23:16Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:testcases.SanityTest@4ff8d125]" name="tearDown" is-config="true" duration-ms="2635" started-at="2020-06-27T14:19:31Z" finished-at="2020-06-27T14:19:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
